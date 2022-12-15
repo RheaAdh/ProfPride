@@ -18,7 +18,8 @@
     "react-dom": "18.1.0",
     "react-native": "^0.70.5",
     "react-native-toast-message": "^2.1.5",
-    "react-native-web": "~0.18.9"
+    "react-native-web": "~0.18.9",
+    "uuidv4": "^6.2.13"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"

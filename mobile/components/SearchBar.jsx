@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Profile = () => {
+const SearchBar = () => {
     return (
         <div>
-            profile
+            Search Bar
         </div>
     )
 }
 
-export default Profile
+export default SearchBar

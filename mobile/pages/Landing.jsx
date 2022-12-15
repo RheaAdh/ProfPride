@@ -10,7 +10,7 @@ export default function Landing({navigation}) {
     <Styled.container>
         <Logo/>
         <Styled.mainImage source={landing} />
-        <Button text="Begin Reading" onPress={()=>navigation.navigate('Register')} />
+        <Button text="Manage Now!" onPress={()=>navigation.navigate('CustomerList')} />
     </Styled.container>
   );
 }
