@@ -1,16 +1,18 @@
-import { Column, Entity, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { RoleType } from '../utils/types';
+import { BookingEntity } from './booking.entity';
+import { RoomEntity } from './room.entity';
 
 @Entity('user')
 export class UserEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ unique: true })
+  @Column({ unique: true, nullable: true })
   email: string;
 
   @Column({ select: false })
-  password: string;
+  token: string;
 
   @Column({ type: 'enum', enum: RoleType, default: RoleType.CUSTOMER })
   role: RoleType;
@@ -32,4 +34,7 @@ export class UserEntity {
 
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   createdAt: Date;
+
+  @OneToMany(() => BookingEntity, (booking) => booking.user)
+  bookings: BookingEntity[];
 }

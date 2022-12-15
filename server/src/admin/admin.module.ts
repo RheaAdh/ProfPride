@@ -10,6 +10,8 @@ import { RoomEntity } from 'src/entities/room.entity';
 import { UserEntity } from 'src/entities/user.entity';
 import { UserService } from './services/user.service';
 import { UserController } from './controllers/user.controller';
+import { RoomService } from './services/room.service';
+import { RoomController } from './controllers/room.controller';
 @Module({
   imports: [
     TypeOrmModule.forFeature([
@@ -19,11 +21,12 @@ import { UserController } from './controllers/user.controller';
       RoomEntity,
     ]),
   ],
-  providers: [ BookingService, PaymentService, UserService],
+  providers: [BookingService, PaymentService, UserService, RoomService],
   controllers: [
     BookingController,
     PaymentController,
     UserController,
+    RoomController,
   ],
 })
 export class AdminModule {}

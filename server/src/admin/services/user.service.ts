@@ -3,7 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { UserEntity } from 'src/entities/user.entity';
 import { CreateUserParams, UpdateUserParams } from 'src/utils/types';
 import { Repository } from 'typeorm';
-
+import { v4 as uuidv4 } from 'uuid';
 @Injectable()
 export class UserService {
   constructor(
@@ -19,6 +19,7 @@ export class UserService {
     const newUser = this.userRepository.create({
       ...userDetails,
       createdAt: new Date(),
+      token: uuidv4(),
     });
     return this.userRepository.save(newUser);
   }

@@ -16,5 +16,5 @@ export class PaymentEntity {
   mode: string;
 
   @ManyToOne(() => BookingEntity, (booking) => booking.payments)
-  bookings: BookingEntity;
+  booking: BookingEntity;
 }

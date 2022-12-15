@@ -8,6 +8,7 @@ import {
 import { StayType } from '../utils/types';
 import { PaymentEntity } from './payment.entity';
 import { RoomEntity } from './room.entity';
+import { UserEntity } from './user.entity';
 @Entity('booking')
 export class BookingEntity {
   @PrimaryGeneratedColumn()
@@ -34,6 +35,9 @@ export class BookingEntity {
   @ManyToOne(() => RoomEntity, (room) => room.bookings)
   room: RoomEntity;
 
-  @OneToMany(() => PaymentEntity, (payment) => payment.bookings)
+  @OneToMany(() => PaymentEntity, (payment) => payment.booking)
   payments: PaymentEntity[];
+
+  @ManyToOne(() => UserEntity, (user) => user.bookings)
+  user: UserEntity;
 }
