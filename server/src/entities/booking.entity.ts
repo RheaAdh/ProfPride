@@ -5,7 +5,6 @@ import {
   OneToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { CustomerEntity } from './customer.entity';
 import { StayType } from '../utils/types';
 import { PaymentEntity } from './payment.entity';
 import { RoomEntity } from './room.entity';
@@ -31,9 +30,6 @@ export class BookingEntity {
 
   @Column()
   cost: number;
-
-  @ManyToOne(() => CustomerEntity, (customer) => customer.bookings)
-  customer: CustomerEntity;
 
   @ManyToOne(() => RoomEntity, (room) => room.bookings)
   room: RoomEntity;

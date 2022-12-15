@@ -1,5 +1,4 @@
 import { Column, Entity, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
-import { CustomerEntity } from './customer.entity';
 import { RoleType } from '../utils/types';
 
 @Entity('user')
@@ -17,8 +16,20 @@ export class UserEntity {
   role: RoleType;
 
   @Column()
-  createdAt: Date;
+  name: string;
 
-  @OneToOne(() => CustomerEntity, (customer) => customer.user)
-  customer: CustomerEntity;
+  @Column({ unique: true })
+  phoneNo1: string;
+
+  @Column({ nullable: true })
+  phoneNo2?: string;
+
+  @Column({ default: 0 })
+  deposit: number;
+
+  @Column({ nullable: true })
+  aadharLink?: string;
+
+  @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
+  createdAt: Date;
 }
