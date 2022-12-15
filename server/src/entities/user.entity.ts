@@ -1,6 +1,6 @@
 import { Column, Entity, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { CustomerEntity } from './customer.entity';
-import { RoleType } from '../../types';
+import { RoleType } from '../utils/types';
 
 @Entity('user')
 export class UserEntity {
@@ -15,6 +15,9 @@ export class UserEntity {
 
   @Column({ type: 'enum', enum: RoleType, default: RoleType.CUSTOMER })
   role: RoleType;
+
+  @Column()
+  createdAt: Date;
 
   @OneToOne(() => CustomerEntity, (customer) => customer.user)
   customer: CustomerEntity;

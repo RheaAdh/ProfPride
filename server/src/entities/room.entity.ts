@@ -1,6 +1,6 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { BookingEntity } from './booking.entity';
-import { RoomType } from '../../types';
+import { RoomType } from '../utils/types';
 
 @Entity('room')
 export class RoomEntity {

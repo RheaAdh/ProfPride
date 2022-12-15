@@ -15,7 +15,7 @@ import { AdminModule } from './admin/admin.module';
       username: 'root',
       password: 'password',
       database: 'profpride',
-      entities: [],
+      autoLoadEntities: true,
       synchronize: true, //remove in prod
     }),
     AdminModule,

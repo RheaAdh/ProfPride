@@ -6,7 +6,7 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { CustomerEntity } from './customer.entity';
-import { StayType } from '../../types';
+import { StayType } from '../utils/types';
 import { PaymentEntity } from './payment.entity';
 import { RoomEntity } from './room.entity';
 @Entity('booking')

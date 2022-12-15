@@ -6,11 +6,11 @@ import { BookingController } from './controllers/booking.controller';
 import { CustomerController } from './controllers/customer.controller';
 import { PaymentController } from './controllers/payment.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { CustomerEntity } from '../models/customer.entity';
-import { BookingEntity } from 'src/models/booking.entity';
-import { PaymentEntity } from 'src/models/payment.entity';
-import { RoomEntity } from 'src/models/room.entity';
-import { UserEntity } from 'src/models/user.entity';
+import { CustomerEntity } from '../entities/customer.entity';
+import { BookingEntity } from 'src/entities/booking.entity';
+import { PaymentEntity } from 'src/entities/payment.entity';
+import { RoomEntity } from 'src/entities/room.entity';
+import { UserEntity } from 'src/entities/user.entity';
 import { UserService } from './services/user.service';
 import { UserController } from './controllers/user.controller';
 @Module({

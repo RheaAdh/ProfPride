@@ -15,3 +15,11 @@ export enum StayType {
   MONTHLY = 'monthly',
   DAILY = 'daily',
 }
+export class CreateUserParams {
+  email: string;
+  password: string;
+}
+export class UpdateUserParams {
+  email: string;
+  password: string;
+}
