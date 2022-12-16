@@ -1,8 +1,6 @@
-import { ActivityIndicator } from "react-native";
-import {ScreenCenter} from '../utils/styled.components'
+import { Stack, ActivityIndicator } from "@react-native-material/core";
+import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 
-export default function Loading({fullScreen}) {
-    if (fullScreen) return <ScreenCenter><ActivityIndicator size="large" color="#7E0CD8" /></ScreenCenter>
-    
-    return <ActivityIndicator size="large" color="#7E0CD8" />
+export default function Loading() {
+    return <ActivityIndicator size="large" />;
 }
