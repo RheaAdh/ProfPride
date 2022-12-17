@@ -42,4 +42,9 @@ export class BookingController {
   async deleteBookingById(@Param('id', ParseIntPipe) id: number) {
     await this.bookingService.deleteBooking(id);
   }
+
+  @Get(':userId')
+  getBooking(@Param('userId', ParseIntPipe) userId: number) {
+    return this.bookingService.findBookingsByUserId(userId);
+  }
 }

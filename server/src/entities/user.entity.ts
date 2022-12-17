@@ -17,7 +17,7 @@ export class UserEntity {
   @Column({ type: 'enum', enum: RoleType, default: RoleType.CUSTOMER })
   role: RoleType;
 
-  @Column()
+  @Column({ nullable: false })
   name: string;
 
   @Column({ unique: true })

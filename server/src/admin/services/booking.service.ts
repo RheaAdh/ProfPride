@@ -54,4 +54,16 @@ export class BookingService {
   deleteBooking(id: number) {
     return this.bookingRepository.delete(id);
   }
+
+  async findBookingsByUserId(userId: number) {
+    const userBookings = await this.userRepository.find({
+      relations: ['bookings'],
+      where: {
+        id: userId,
+      },
+    });
+    console.log(userBookings);
+
+    return userBookings;
+  }
 }

@@ -12,8 +12,6 @@ export class UserService {
   ) {}
 
   findUsers() {
-    console.log('find all hit');
-
     return this.userRepository.find();
   }
 
