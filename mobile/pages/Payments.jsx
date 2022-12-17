@@ -4,14 +4,15 @@ import { ScrollView } from 'react-native-gesture-handler';
 import Header from '../components/Header';
 
 const Payments = ({ navigation, route }) => {
+    const [user, setUser] = useState({});
+    const [booking, setBooking] = useState({});
+    useEffect(() => {
+        setUser(route.params.user);
+        setBooking(route.params.booking);
+    });
     return (
         <ScrollView>
-        <Header title='Payments' />
-            <Button
-                style={{ marginBottom: 10 }}
-                variant='outlined'
-                title='Payments'
-            />
+            <Header title={user.name} />
         </ScrollView>
     );
 };

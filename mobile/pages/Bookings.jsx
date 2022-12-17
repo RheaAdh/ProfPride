@@ -3,20 +3,22 @@ import { useState, useEffect } from 'react';
 import { ListItem, TextInput, Button } from '@react-native-material/core';
 import { ScrollView, Text } from 'react-native';
 import Header from '../components/Header';
+import api from '../utils/api.service';
+import Icon from '@expo/vector-icons/MaterialCommunityIcons';
 
 const Bookings = ({ navigation, route }) => {
     const [user, setUser] = useState({});
     let [bookings, setBookings] = useState([]);
-
+    const [loading, setLoading] = useState(true);
     async function fetchData() {
         try {
-            console.log(`/booking/:${user.id}`);
+            console.log(`/booking/${route.params.user.id}`);
             setLoading(true);
-            const res = await api.get(`/booking/:${user.id}`, {
+            const res = await api.get(`/booking/${route.params.user.id}`, {
                 crossOrigin: true,
             });
-            console.log('resulttttttttt', res);
-            setBookings(res.bookings);
+            console.log('resul22222222222', res[0].bookings);
+            setBookings(res[0].bookings);
             setLoading(false);
         } catch (err) {
             console.log(err);
@@ -28,27 +30,24 @@ const Bookings = ({ navigation, route }) => {
         }
     }
 
-    useEffect(async () => {
-        console.log('here');
+    useEffect(() => {
+        console.log('here', route.params.user);
         setUser(route.params.user);
         fetchData();
         console.log('bookings', bookings);
-    }, [bookings]);
+    });
     return (
         <ScrollView>
             <Header title={user.name + ' Bookings'} />
-            {/* <Button
-                style={{ marginBottom: 10 }}
-                variant='outlined'
-                title='Payments'
-            /> */}
+
             {bookings.map((booking) => (
                 <ListItem
                     title={booking.id}
-                    secondaryText={`cost = ${booking.cost}`}
+                    secondaryText={`cost: ${booking.cost} | mode: ${booking.mode}`}
                     onPress={() =>
                         navigation.navigate('Payments', {
                             booking: booking,
+                            user: user,
                         })
                     }
                     trailing={(props) => (
