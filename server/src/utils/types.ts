@@ -56,3 +56,11 @@ export class UpdateRoomParams {
   maxOccupants: number;
   occupiedCount: number;
 }
+export class CreatePaymentParams {
+  amountPaid: number;
+  mode: string;
+}
+export class UpdatePaymentParams {
+  amountPaid: number;
+  mode: string;
+}

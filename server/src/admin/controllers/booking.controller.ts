@@ -44,7 +44,9 @@ export class BookingController {
   }
 
   @Get(':userId')
-  getBooking(@Param('userId', ParseIntPipe) userId: number) {
+  getUserBookings(@Param('userId', ParseIntPipe) userId: number) {
     return this.bookingService.findBookingsByUserId(userId);
   }
+
+ 
 }

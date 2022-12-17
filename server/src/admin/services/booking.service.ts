@@ -62,8 +62,6 @@ export class BookingService {
         id: userId,
       },
     });
-    console.log(userBookings);
-
     return userBookings;
   }
 }
