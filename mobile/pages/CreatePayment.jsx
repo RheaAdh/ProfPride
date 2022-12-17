@@ -15,7 +15,7 @@ const CreatePayment = ({ navigation, route }) => {
     async function createNewPayment() {
         const obj = {
             mode,
-            amount,
+            amountPaid: amount,
         };
         console.log(obj);
         const res = await api.post(`/payment/${booking.id}`, obj, {
