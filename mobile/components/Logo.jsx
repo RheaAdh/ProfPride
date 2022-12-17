@@ -12,17 +12,17 @@ export default function Logo() {
 }
 
 const Styled = {
-  container: styled.View``,
-  tagline: styled.Text`
-    align-self: center;
-    margin-top: 10;
-    font-family: 'fira-sans';
-    color: #1B1B1B;
-    font-size: 13;
-  `,
-  logo: styled.Image`
-    width: 73px;
-    height: 58px;
-    align-self: center;
-  `,
+    container: styled.View``,
+    tagline: styled.Text`
+        align-self: center;
+        margin-top: 10;
+        font-family: 'fira-sans';
+        color: #1b1b1b;
+        font-size: 13;
+    `,
+    logo: styled.Image`
+        width: 73px;
+        height: 58px;
+        align-self: center;
+    `,
 };

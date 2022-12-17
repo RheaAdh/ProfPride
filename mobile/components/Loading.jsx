@@ -1,6 +1,5 @@
-import { Stack, ActivityIndicator } from "@react-native-material/core";
-import Icon from "@expo/vector-icons/MaterialCommunityIcons";
+import { Stack, ActivityIndicator } from '@react-native-material/core';
 
 export default function Loading() {
-    return <ActivityIndicator size="large" />;
+    return <ActivityIndicator size='large' />;
 }
