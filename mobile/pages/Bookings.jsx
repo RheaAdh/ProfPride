@@ -17,7 +17,6 @@ const Bookings = ({ navigation, route }) => {
             const res = await api.get(`/booking/${route.params.user.id}`, {
                 crossOrigin: true,
             });
-            console.log('resul22222222222', res[0].bookings);
             setBookings(res[0].bookings);
             setLoading(false);
         } catch (err) {
@@ -31,15 +30,12 @@ const Bookings = ({ navigation, route }) => {
     }
 
     useEffect(() => {
-        console.log('here', route.params.user);
         setUser(route.params.user);
         fetchData();
-        console.log('bookings', bookings);
-    });
+    }, []);
     return (
         <ScrollView>
             <Header title={user.name + ' Bookings'} />
-
             {bookings.map((booking) => (
                 <ListItem
                     title={booking.id}

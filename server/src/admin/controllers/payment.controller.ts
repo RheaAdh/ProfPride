@@ -45,7 +45,6 @@ export class PaymentController {
 
   @Get(':bookingId')
   getUserBookingPayments(@Param('bookingId', ParseIntPipe) bookingId: number) {
-    console.log('sup');
     return this.paymentService.findPaymentsByUserIdBookingId(bookingId);
   }
 }

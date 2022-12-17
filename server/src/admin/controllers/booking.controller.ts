@@ -47,6 +47,4 @@ export class BookingController {
   getUserBookings(@Param('userId', ParseIntPipe) userId: number) {
     return this.bookingService.findBookingsByUserId(userId);
   }
-
- 
 }
